@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instrumentationManifest xmlns="http://schemas.microsoft.com/win/2004/08/events">
+  <instrumentation>
+    <events>
+      <provider name="sample_nativecpp_eventlog_and_etw_TraceProvider"
+                guid="{27997477-8292-5db5-0aa8-85b7da832b17}"
+                symbol="sample_nativecpp_eventlog_and_etw_TraceProvider"
+                resourceFileName="sample_nativecpp_eventlog_and_etw.exe"
+                messageFileName="sample_nativecpp_eventlog_and_etw.exe">
+        <channels>
+          <channel name="Application"
+                   chid="Application"
+                   type="Admin"
+                   enabled="true"
+                   message="Application Log" />
+        </channels>
+        <events>
+          <event value="1"
+                 version="0"
+                 level="win:Informational"
+                 symbol="MyEvent"
+                 message="Sample event message"
+                 channel="Application" />
+        </events>
+      </provider>
+    </events>
+  </instrumentation>
+</instrumentationManifest>
