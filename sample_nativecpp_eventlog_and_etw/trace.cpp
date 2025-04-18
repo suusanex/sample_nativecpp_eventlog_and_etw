@@ -48,7 +48,7 @@ DWORD EventLogFinalize()
 	return ERROR_SUCCESS;
 }
 
-DWORD EventLogWrite(int level, ULONG eventId)
+DWORD EventLogWrite(int level, ULONG eventId, LPCWSTR appendData)
 {
 	if (!g_hEventLog) return ERROR_INVALID_HANDLE;
 
@@ -75,9 +75,9 @@ DWORD EventLogWrite(int level, ULONG eventId)
 		0,
 		eventId,
 		nullptr,
+		appendData ? 1 : 0,
 		0,
-		0,
-		nullptr,
+		&appendData,
 		nullptr
 	))
 	{

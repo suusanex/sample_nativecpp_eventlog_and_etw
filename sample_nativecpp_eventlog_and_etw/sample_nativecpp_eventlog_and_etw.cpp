@@ -24,7 +24,7 @@ int main()
 		}
 	}
 	{
-		const auto ret = EventLogWrite(WINEVENT_LEVEL_WARNING, EVENTLOG_MSG_OTHER_WARNING);
+		const auto ret = EventLogWrite(WINEVENT_LEVEL_WARNING, EVENTLOG_MSG_OTHER_WARNING, L"warning info");
 		if (ret != ERROR_SUCCESS) {
 			std::cout << "EventLogWrite failed. ret=0x" << std::hex << ret << "\n";
 			return 1;

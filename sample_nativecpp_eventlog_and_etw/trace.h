@@ -26,7 +26,8 @@ DWORD EventLogFinalize();
 /// <param name="level">ログレベル。WINEVENT_LEVEL_CRITICAL～WINEVENT_LEVEL_VERBOSEの値を指定すること。
 /// イベント種類の振り分けにも使用し、CRITICAL・ERRORはエラー、WARNINGは警告、それより下は情報とする。</param>
 /// <param name="eventId">イベントログに出力するメッセージ。EventLogMessage.hに定義されたメッセージ（イベント）IDを指定する。</param>
-DWORD EventLogWrite(int level, ULONG eventId);
+/// <param name="appendData">イベントログの追加情報へ入れる文字列。不要な場合はnullptrを渡す。</param>
+DWORD EventLogWrite(int level, ULONG eventId, LPCWSTR appendData=nullptr);
 
 
 
